@@ -49,7 +49,18 @@ var MY_EMAIL          = "your@email.com";
 
 ### 3. Customize your profile and targets
 
-Edit `CANDIDATE_PROFILE` with your background, skills, and honest gaps. The more specific you are, the better Claude's fit evaluation will be.
+Edit `CANDIDATE_PROFILE` with your background, skills, and honest gaps. The more specific you are, the better Claude's fit evaluation will be. A well-structured profile should include:
+
+- **Experience** — job titles, employers, dates, and concrete responsibilities. Include metrics where you have them.
+- **Education** — degrees, institutions, graduation year
+- **Certifications** — any relevant credentials with acronyms spelled out
+- **Skills** — tools, platforms, and technologies you can honestly claim
+- **Honest gaps** — things you *cannot* do or don't want. This is the most important section for filtering accuracy. Examples: no security clearance, limited Active Directory experience, no Master's degree, not interested in supervisory roles. Be specific — vague gaps produce vague filtering.
+- **Target roles** — the job titles or categories you want surfaced
+- **Target locations** — cities and regions you're willing to work in, plus whether remote is acceptable
+- **Schedule constraints** — shift preferences, minimum hours, full-time vs. contract preference
+
+The `HARD EXCLUSIONS` block in the `evaluateFit` prompt is where you encode dealbreakers that should disqualify a listing regardless of how good it looks otherwise. Keep this list tight and specific — overly broad exclusions will filter out legitimate matches.
 
 Edit `LOCATIONS` and `ROLE_KEYWORDS` to match your target search.
 
