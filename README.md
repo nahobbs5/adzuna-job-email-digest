@@ -101,9 +101,7 @@ These can be run manually from the Apps Script editor for debugging and maintena
 All state is managed via Google Apps Script's `PropertiesService`. No external database or storage required.
 
 ---
-
 ## Notes
 
-- The script uses `claude-haiku-4-5-20251001` for fit evaluation — fast and cost-efficient for high-frequency runs
-- Adzuna's free tier allows 250 requests/day (25/minute, 1,000/week, 2,500/month); at 4 role keywords × ~13 locations that's 52 calls per hourly run, well within the daily limit with headroom for multiple cycles
-- PropertiesService has a 500KB storage limit — the pending jobs queue is cleared daily, so this is not a concern under normal operation
+- The script uses `claude-haiku-4-5-20251001` for fit evaluation — fast and cost-efficient for high-frequency runs.
+- Adzuna's free tier allows 250 requests/day (25/minute, 1,000/week, 2,500/month); at 4 role keywords × 1 location per run, that's 4 API calls per hour. A full cycle across all 13 locations completes in 13 hours, well within the daily limit.
